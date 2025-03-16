@@ -39,13 +39,15 @@ def _():
         for i in range(2, n):
             sequence.append(sequence[i - 1] + sequence[i - 2])
         return sequence
+
     return (fibonacci,)
 
 
 @app.cell
 def _():
-    import numpy as np
     import marimo as mo
+    import numpy as np
+
     return mo, np
 
 

@@ -6,9 +6,10 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
-    import polars as pl
-    import marimo as mo
     import altair as alt
+    import marimo as mo
+    import polars as pl
+
     return alt, mo, pl
 
 
@@ -39,7 +40,7 @@ def _(df, mo):
     ### Dataset Overview
 
     - Total records: {df.height}
-    - Columns: {', '.join(df.columns)}
+    - Columns: {", ".join(df.columns)}
 
     ### Summary Statistics
 
