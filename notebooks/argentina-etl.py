@@ -6,12 +6,25 @@ app = marimo.App(width="full", app_title="ETL Argentina Dataset")
 
 @app.cell
 def _():
+    # dedicated to marimo env setup
+    import marimo as mo
     import pandas as pd
-    import requests
-    response = requests.get('https://datos.acumar.gob.ar/dataset/2e4de507-5a60-4156-9212-424d00f165c9/resource/2a68b41c-7f17-4333-a64f-0e279890c5c7/download/registro-proveedores-sociales-mipymes-20250228.csv')
-    data = response.json
-    pd.DataFrame(data)
-    return data, pd, requests, response
+    import requests as rq
+    from pathlib import Path
+    return Path, mo, pd, rq
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""# Bienvenidos a el ETL de Datasets de Argentina""")
+    return
+
+
+@app.cell
+def _(Path):
+    file_path = Path().cwd()
+    print(file_path)
+    return (file_path,)
 
 
 if __name__ == "__main__":
