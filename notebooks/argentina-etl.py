@@ -7,10 +7,11 @@ app = marimo.App(width="full", app_title="ETL Argentina Dataset")
 @app.cell
 def _():
     # dedicated to marimo env setup
+    from pathlib import Path
+
     import marimo as mo
     import pandas as pd
     import requests as rq
-    from pathlib import Path
     return Path, mo, pd, rq
 
 
@@ -21,10 +22,16 @@ def _(mo):
 
 
 @app.cell
-def _(Path):
-    file_path = Path().cwd()
-    print(file_path)
-    return (file_path,)
+def _(mo):
+
+    options = {
+        "op1": "Cargar un dataset",
+        "op2": "Limpiar un dataset",
+        "op3": "Transformar un dataset",
+    }
+
+    mo.accordion(options)
+    return (options,)
 
 
 if __name__ == "__main__":
