@@ -1,0 +1,47 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.11.20"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "2b555acb201c68e81750889ffe7b8ad0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "b4e11babef8e54aa356aeb41f295e234",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='MJUe-0' random-id='14f57b03-569b-935d-a044-129ad54a5f7d'><marimo-anywidget data-initial-value='{&quot;_columns&quot;: [&quot;sepal_length&quot;, &quot;sepal_width&quot;, &quot;petal_length&quot;, &quot;petal_width&quot;, &quot;species&quot;], &quot;_table_name&quot;: &quot;df&quot;, &quot;data_cube_schema&quot;: &quot;quak&quot;, &quot;sql&quot;: &quot;SELECT * FROM &#92;&quot;df&#92;&quot;&quot;}' data-label='null' data-js-url='&quot;./@file/554739-3099780-4bHocR80.js&quot;' data-js-hash='&quot;ea2f7df5fe569ef66eb985d68dd4f61d&quot;' data-css='&quot;&quot;' data-buffer-paths='[]'></marimo-anywidget></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "28a805f8e51d5323121201aaec7e12ca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre style='font-size: 12px'>&#x27;SELECT &quot;sepal_length&quot;, &quot;sepal_width&quot;, &quot;petal_length&quot;, &quot;petal_width&quot;, &quot;species&quot; FROM &quot;df&quot; ORDER BY &quot;sepal_length&quot; DESC NULLS LAST, &quot;petal_width&quot; DESC NULLS LAST&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

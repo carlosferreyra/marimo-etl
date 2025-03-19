@@ -1,37 +1,43 @@
+# /// script
+# [tool.marimo.runtime]
+# auto_instantiate = false
+# ///
+
 import marimo
 
 __generated_with = "0.11.20"
-app = marimo.App(width="full", app_title="ETL Argentina Dataset")
+app = marimo.App(width="medium", app_title="ETL Demo")
 
 
 @app.cell
 def _():
-    # dedicated to marimo env setup
     from pathlib import Path
 
     import marimo as mo
     import pandas as pd
-    import requests as rq
-    return Path, mo, pd, rq
+    import quak
+    import seaborn as sns
+
+    return Path, mo, pd, quak, sns
 
 
 @app.cell
-def _(mo):
-    mo.md(r"""# Bienvenidos a el ETL de Datasets de Argentina""")
-    return
+def _(Path, mo, pd, quak):
+    # Load the iris dataset
+    iris_df = pd.read_csv(str(Path().cwd() / "public" / "penguins.csv"))
+
+    # Create a quak widget to display the dataset
+    widget = mo.ui.anywidget(quak.Widget(iris_df))
+    # widget
+    return iris_df, widget
 
 
 @app.cell
-def _(mo):
-
-    options = {
-        "op1": "Cargar un dataset",
-        "op2": "Limpiar un dataset",
-        "op3": "Transformar un dataset",
-    }
-
-    mo.accordion(options)
-    return (options,)
+def _(widget):
+    # Display the SQL state of the widget
+    widget.sql
+    widget  # # Display the widget
+    return widget
 
 
 if __name__ == "__main__":
